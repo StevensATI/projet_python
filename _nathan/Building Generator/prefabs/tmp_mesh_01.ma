@@ -1,11 +1,10 @@
 //Maya ASCII 2025ff03 scene
-//Name: cube_mesh.ma
-//Last modified: Thu, Nov 27, 2025 03:09:18 PM
+//Name: tmp_mesh_01.ma
+//Last modified: Fri, Nov 28, 2025 02:20:53 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
 		 "mtoa" "5.4.8.2";
-requires "stereoCamera" "10.0";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -13,17 +12,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26100)";
-fileInfo "UUID" "E8D1EAB5-409B-787F-CB48-C6A2A3CBC39B";
+fileInfo "UUID" "47073B9F-47E6-9650-2E5F-5C92B0A82A25";
 createNode transform -s -n "persp";
 	rename -uid "01C7D953-4BE1-A8EC-78E7-BBA0E09343B2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.3281751366241104 3.4214590410345584 7.3643791755526742 ;
-	setAttr ".r" -type "double3" -23.138352729680459 -13.799999999988836 -4.0938657342001604e-16 ;
+	setAttr ".t" -type "double3" -4.1702764989353929 3.7121646240103998 7.7490958860795889 ;
+	setAttr ".r" -type "double3" -21.338352729683461 -31.799999999989122 9.3557536960501375e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "67B5885F-4C40-596C-51CC-F981A0F13D38";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 7.2454430034181483;
+	setAttr ".coi" 8.6937559947304699;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -95,6 +94,7 @@ createNode mesh -n "tmp_mesh_01Shape" -p "tmp_mesh_01";
 	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
 	setAttr ".gtag[5].gtagnm" -type "string" "top";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
@@ -103,6 +103,8 @@ createNode mesh -n "tmp_mesh_01Shape" -p "tmp_mesh_01";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 4 ".pt[2:5]" -type "float3"  0 1.2109509 0 0 1.2109509 
+		0 0 1.2109509 0 0 1.2109509 0;
 	setAttr -s 8 ".vt[0:7]"  -1 0 0.5 1 0 0.5 -1 1 0.5 1 1 0.5 -1 1 0
 		 1 1 0 -1 0 0 1 0 0;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
@@ -126,20 +128,20 @@ createNode mesh -n "tmp_mesh_01Shape" -p "tmp_mesh_01";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".db" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "3B5D1128-4398-BE5B-BA6F-DAAEE5E58DC5";
+	rename -uid "223A7DDB-4CD4-F929-0C6B-BBBDA413D028";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "1AD4EA82-470C-03B1-0441-E1B39E32C91B";
+	rename -uid "FE2A7BD8-4C18-4201-1EE3-C9B7E76FC5EC";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "59CFC50E-4DF0-5CAB-70AC-16BF49D764B0";
+	rename -uid "802D474A-4DA5-A724-E4B9-C6972BB7C77C";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "6538E407-41C6-D1AE-C61C-0F80C79BA080";
+	rename -uid "BCB05A45-4E72-B925-458E-A8AC0E5BE6B3";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "DC5F4B34-4977-D3DC-6E4E-468BC43C1DA5";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "8FD0430C-446C-3FA3-3D42-CDBE429F0C74";
+	rename -uid "71C0FFF9-4609-279E-AD52-0881FBDE3841";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3C7C20D8-4303-05F4-BB08-CCAA313DF7FA";
 	setAttr ".g" yes;
@@ -252,8 +254,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -268,4 +268,4 @@ connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "tmp_mesh_01Shape.iog" ":initialShadingGroup.dsm" -na;
-// End of cube_mesh.ma
+// End of tmp_mesh_01.ma
